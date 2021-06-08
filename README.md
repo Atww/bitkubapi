@@ -1,4 +1,4 @@
-# BitkubAPI-WrapperDemo
+# BitkubAPI-WrapperDemo [ Beta Version ]
 
 
 ## Install
