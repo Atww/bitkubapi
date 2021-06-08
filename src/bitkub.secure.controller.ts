@@ -2,7 +2,9 @@ import axios, { AxiosResponse, AxiosError, } from 'axios'
 import BitkubController from './bitkub.controller';
 import PayLoad from './util/payload'
 import { IPayload } from './interface/Secure/IPayload.interface';
-class BitkubSecure extends BitkubController {
+import ISecureBase from './interface/ISecure.interface';
+import { Balances } from './interface/Secure/IResponse.interface';
+class BitkubSecure extends BitkubController implements ISecureBase {
     private BitKub_API_Key: string;
     private BitKub_Secret_Key: string;
     private payload: PayLoad;
@@ -20,14 +22,14 @@ class BitkubSecure extends BitkubController {
         this.interceptResponse();
     }
 
-    current_balances(): Promise<object> {
-        return new Promise<object>(async (resolve, reject) => {
+    current_balances(): Promise<Balances> {
+        return new Promise<Balances>(async (resolve, reject) => {
             try {
                 const body: IPayload = await this.payload.createBodyPayload();
                 const response: AxiosResponse = await this.axios.post('/api/market/balances', {
                     ...body
                 })
-                const balancesUser: object = response.data;
+                const balancesUser: Balances = response.data;
                 resolve(balancesUser);
             } catch (error) {
                 reject(this.response.error(error))
