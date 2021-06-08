@@ -10,7 +10,7 @@ export interface MarketSymbol extends DefaultResponse {
         id: number;
         symbol: string;
         info: string;
-    }
+    }[]
 }
 
 export interface SymBol {
