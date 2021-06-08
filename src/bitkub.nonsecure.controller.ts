@@ -7,6 +7,24 @@ class BitkubNonSecure extends BitkubController implements INonSecureBase {
         super();
         this.interceptResponse();
     }
+    getSymbols(): Promise<string[]> {
+        return new Promise<string[]>(async (resolve, reject) => {
+            try {
+                const response: MarketSymbol = await this.market_symbols();
+                let arraySymbol = [];
+                response.result.forEach(({symbol})=>{
+                    let [THB,Symbol] = symbol.split("_");
+                    if(Symbol){
+                        arraySymbol.push(Symbol);
+                    }
+                })
+                resolve(arraySymbol);
+            } catch (error) {
+                reject(this.response.error(error))
+            }
+        });
+        
+    }
     status(): Promise<ServerStatus[]> {
         return new Promise<ServerStatus[]>(async (resolve, reject) => {
             try {

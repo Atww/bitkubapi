@@ -6,7 +6,7 @@ interface INonSecureBase {
     market_symbols(): Promise<MarketSymbol>; //List all available symbols.
     market_ticker(symbol?: string): Promise<SymBol>; //Get ticker information.
     market_trade(symbol: string, limit: number): Promise<ListRecentTrade>; //List recent trades.
-
+    getSymbols():Promise<string[]> // Utill Func to get Array Symbols
 }
 
 export default INonSecureBase
