@@ -20,4 +20,4 @@ class WebSocketBitkubController {
 
 }
 
-export  {WebSocketBitkubController}
+export default WebSocketBitkubController

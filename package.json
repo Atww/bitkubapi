@@ -1,6 +1,6 @@
 {
-  "name": "bitkubapi",
-  "version": "0.0.1",
+  "name": "bitkubapidemo",
+  "version": "0.0.2",
   "description": "API Bitkub Wrapper Demo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,5 +29,13 @@
   },
   "devDependencies": {
     "@types/ws": "^7.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atww/bitkubapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Atww/bitkubapi/issues"
+  },
+  "homepage": "https://github.com/Atww/bitkubapi#readme"
 }
