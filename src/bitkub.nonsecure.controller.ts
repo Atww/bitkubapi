@@ -5,6 +5,9 @@ import BitkubController from './bitkub.controller';
 class BitkubNonSecure extends BitkubController implements INonSecureBase {
     constructor() {
         super();
+        this.axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*",
+        this.axios.defaults.headers.common['Access-Control-Allow-Headers'] = "*",
+
         this.interceptResponse();
     }
     getSymbols(): Promise<string[]> {

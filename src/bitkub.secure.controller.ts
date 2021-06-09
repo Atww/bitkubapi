@@ -14,7 +14,8 @@ class BitkubSecure extends BitkubController implements ISecureBase {
         this.BitKub_API_Key = BitKub_API_Key;
         this.BitKub_Secret_Key = BitKub_Secret_Key;
         this.payload = new PayLoad(this.BitKub_Secret_Key);
-
+        this.axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*",
+        this.axios.defaults.headers.common['Access-Control-Allow-Headers'] = "*",
         this.axios.defaults.headers.common['Accept'] = "application/json";
         this.axios.defaults.headers.common['Content-type'] = "application/json";
         this.axios.defaults.headers.common['X-BTK-APIKEY'] = BitKub_API_Key;

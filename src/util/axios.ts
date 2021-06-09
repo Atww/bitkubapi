@@ -3,7 +3,7 @@ function axiosInit(baseUrl: string, timeout = 10000, headers = {}) {
     const Instance: AxiosInstance = axios.create({
         baseURL: baseUrl,
         timeout,
-        headers
+        headers,
     });
     return Instance;
 }
